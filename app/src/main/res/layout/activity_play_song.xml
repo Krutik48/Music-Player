@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:vumeter="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottm_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:theme="@style/AppBottomSheetDialogTheme">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="270dp"
+        android:layout_height="270dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.206">
+
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/music22" />
+    </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+        <ImageView
+            android:id="@+id/shufle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/shuffle"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_margin="10dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/previous"
+            android:layout_width="44dp"
+            android:layout_height="47dp"
+            app:srcCompat="@drawable/ic_baseline_skip_previous_24"
+            app:tint="@color/red"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_margin="10dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/play"
+            android:layout_width="88dp"
+            android:layout_height="100dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            app:srcCompat="@drawable/ic_baseline_pause_circle_filled_24"
+            app:tint="@color/red"
+            android:layout_margin="10dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/next"
+            android:layout_width="44dp"
+            android:layout_height="47dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            app:srcCompat="@drawable/next"
+            app:tint="@color/red"
+            android:layout_margin="10dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/repeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/repeat"
+            app:tint="@color/red"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_margin="10dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/songName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:ellipsize="marquee"
+        android:fadingEdge="horizontal"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.338" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/white"
+        android:hapticFeedbackEnabled="false"
+        android:theme="@style/SeekBarColor"
+        android:thumbTint="@color/red"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/songName"
+        app:tickMarkTint="#615B5B"
+
+        app:tickMarkTintMode="src_in" />
+
+    <TextView
+        android:id="@+id/duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="32dp"
+        android:text="00:00"
+        android:textAlignment="textEnd"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.943"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/pogress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:text="00:00"
+        android:textAlignment="textStart"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:layout_constraintVertical_bias="0.24" />
+
+    <io.gresse.hugo.vumeterlibrary.VuMeterView
+        android:id="@+id/vumeter"
+        android:layout_width="50dp"
+        android:layout_height="23dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.183"
+        vumeter:vumeter_backgroundColor="@color/red"
+        vumeter:vumeter_blockNumber="3"
+        vumeter:vumeter_blockSpacing="10dp"
+        vumeter:vumeter_speed="10"
+        vumeter:vumeter_startOff="false"
+        vumeter:vumeter_stopSize="5dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Developed By Krutik"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <ImageView
+        android:id="@+id/equalizer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_equalizer_24"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"/>
+
+    <ImageView
+        android:id="@+id/playlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_playlist_play_24"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
