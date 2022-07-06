@@ -1,4 +1,5 @@
 # Music-Player
-It is simple music player app to play music on device built using Android studio
+It is simple music player app to play music on device built using Android studio.
 <br/>
-It has features like search, shuffle and play, play once and stop
+User can search, shuffle and play, play once and stop own music and enjoy it!
+ 
